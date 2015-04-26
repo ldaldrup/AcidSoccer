@@ -80,6 +80,7 @@ public class Controller : MonoBehaviour {
         {
             desiredPos.z += MovementSpeed;
             currentDirection = MovementStates.Up;
+            GetComponent<Animator>().SetTrigger("WalkUp");
         }
 
         if (Input.GetKey(thisKeyMapping[1]))
@@ -93,6 +94,7 @@ public class Controller : MonoBehaviour {
         {
             desiredPos.z -= MovementSpeed;
             currentDirection = MovementStates.Down;
+            GetComponent<Animator>().SetTrigger("WalkDown");
         }
 
         if (Input.GetKey(thisKeyMapping[3]))
@@ -101,7 +103,7 @@ public class Controller : MonoBehaviour {
             currentAnimation = AnimationStates.MoveRight;
             currentDirection = MovementStates.Right;
         }
-        if (Input.GetKeyDown(thisKeyMapping[4]))
+        if (Input.GetKey(thisKeyMapping[4]))
         {
             if (currentContext == Context.FootRules)
             {
@@ -134,10 +136,10 @@ public class Controller : MonoBehaviour {
 
         float force = 9;
 
-        if (currentDirection == MovementStates.Left)
-        {
-            ballOwned.GetComponent<Rigidbody>().AddForce(force, 0.0f, 0.0f);
-        }
+        //if (currentDirection == MovementStates.Left)
+        //{
+        //    ballOwned.GetComponent<Rigidbody>().AddForce(force, 0.0f, 0.0f);
+        //}
         ballOwned.GetComponent<Rigidbody>().AddForce(force, 0.0f, 0.0f);
         ballOwned = null;
         return true;

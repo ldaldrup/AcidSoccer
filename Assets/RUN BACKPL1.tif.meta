@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 983846763f39ad048b2bc62bb18103cf
-timeCreated: 1430067496
+timeCreated: 1430068751
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,59 +59,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 507
-        width: 200
-        height: 337
+        y: 0
+        width: 119
+        height: 335
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RUN BACKPL1_1
       rect:
         serializedVersion: 2
-        x: 200
-        y: 507
-        width: 200
-        height: 337
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RUN BACKPL1_2
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 507
-        width: 200
-        height: 337
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RUN BACKPL1_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 170
-        width: 200
-        height: 337
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RUN BACKPL1_4
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 170
-        width: 200
-        height: 337
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RUN BACKPL1_5
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 170
-        width: 200
-        height: 337
+        x: 119
+        y: 0
+        width: 119
+        height: 335
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
