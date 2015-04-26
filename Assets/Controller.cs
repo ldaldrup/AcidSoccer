@@ -17,6 +17,8 @@ public class Controller : MonoBehaviour {
 
     public Context currentContext;
 
+    
+
     private string[] keyMappingPlayerOne = { "w", "a", "s", "d", "q" };
     private string[] keyMappingPlayerTwo = { "i", "j", "k", "l", "u" };
     private string[] thisKeyMapping;
@@ -72,11 +74,13 @@ public class Controller : MonoBehaviour {
             if (currentContext == Context.FootRules)
             {
                 currentAnimation = AnimationStates.Kick;
+                GetComponent<Animator>().SetTrigger("Kick");
             }
 
             if (currentContext == Context.HandRules)
             {
                 currentAnimation = AnimationStates.HandUp;
+                GetComponent<Animator>().SetTrigger("Hand");
             }
         }
 
