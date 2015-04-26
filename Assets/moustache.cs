@@ -16,8 +16,6 @@ public class moustache : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//
-		Debug.Log (leftright);
 		if (nextSwing == 60) {
 			if(!leftright){
 				leftright = true;
