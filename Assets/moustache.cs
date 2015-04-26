@@ -7,7 +7,8 @@ public class moustache : MonoBehaviour {
 	int nextSwing;
 	bool leftright;
 	Rigidbody rb;
-
+	public float torque;
+	
 	void Start () {
 		nextSwing = 0;
 		rb = GetComponent<Rigidbody>();
@@ -38,7 +39,8 @@ public class moustache : MonoBehaviour {
 
 		//rotate
 
-		//rb.
-	
+
+		rb.AddTorque(transform.up * torque);
+		
 	}
 }
