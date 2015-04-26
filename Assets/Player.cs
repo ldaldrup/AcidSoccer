@@ -5,5 +5,6 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
 	public int id;
+	public int teamIndex;
 	public int score;
 }

@@ -6,6 +6,8 @@ public class Goal : MonoBehaviour {
 	// reference to goals object
 	public static Rules rules;
 
+	public int teamIndex = 0;
+
 	public void setRulesRef (Rules rulesRef)
 	{
 		rules = rulesRef;
@@ -22,7 +24,21 @@ public class Goal : MonoBehaviour {
 				Debug.Log ("not initialized");
 				return;
 			}
-			rules.ball.owner.score++;
+			// if the ball's owner is not part of the goal's team
+			if (!rules.teams[teamIndex].players.Contains(rules.ball.owner))
+			{
+				foreach (Player player in rules.teams[rules.ball.owner.teamIndex].players)
+				{
+					player.score++;
+				}
+			}
+			else 
+			{
+				foreach (Player player in rules.teams[rules.ball.owner.teamIndex].players)
+				{
+					player.score--;
+				}
+			}
 		}
 	}
 }

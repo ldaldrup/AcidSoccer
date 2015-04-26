@@ -93,6 +93,7 @@ public class Rules : MonoBehaviour
 			{
 				int g = Random.Range (0, goalsToAssign.Count);
 				teams[t].goals.Add (goalsToAssign[g]);
+				goalsToAssign[g].teamIndex = t;
 				goalsToAssign[g].gameObject.GetComponent<SpriteRenderer>().color = teams[t].color;
 				goalsToAssign.RemoveAt (g);
 			}
@@ -118,6 +119,7 @@ public class Rules : MonoBehaviour
 			{
 				int p = Random.Range (0, playersToAssign.Count);
 				teams[t].players.Add (playersToAssign[p]);
+				playersToAssign[p].teamIndex = t;
 				playersToAssign[p].gameObject.GetComponent<SpriteRenderer>().color = teams[t].color;
 				playersToAssign.RemoveAt (p);
 			}
