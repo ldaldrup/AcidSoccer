@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class Team
@@ -8,6 +9,6 @@ public class Team
 	public Player[] players;
 	// goals that belong to the team
 	// points are scored by getting the ball into opposing team's goal
-	public GameObject[] goals;
+	public List<Goal> goals = new List<Goal>();
 	
 }
