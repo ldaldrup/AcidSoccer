@@ -40,7 +40,7 @@ public class moustache : MonoBehaviour {
 		//rotate
 
 
-		rb.AddTorque(transform.up * torque);
+		rb.AddTorque(transform.forward * torque);
 		
 	}
 }
