@@ -77,7 +77,7 @@ public class Controller : MonoBehaviour {
 
         if (Input.GetKeyDown(thisKeyMapping[1]))
         {
-            desiredPos.x += MovementSpeed;
+            desiredPos.x -= MovementSpeed;
             currentAnimation = AnimationStates.MoveLeft;
             currentDirection = MovementStates.Left;
         }
@@ -90,7 +90,7 @@ public class Controller : MonoBehaviour {
 
         if (Input.GetKeyDown(thisKeyMapping[3]))
         {
-            desiredPos.x -= MovementSpeed;
+            desiredPos.x += MovementSpeed;
             currentAnimation = AnimationStates.MoveRight;
             currentDirection = MovementStates.Right;
         }
@@ -100,12 +100,14 @@ public class Controller : MonoBehaviour {
             {
                 currentAnimation = AnimationStates.Kick;
                 GetComponent<Animator>().SetTrigger("Kick");
+                PushOwnedBall();
             }
 
             if (currentContext == Context.HandRules)
             {
                 currentAnimation = AnimationStates.HandUp;
                 GetComponent<Animator>().SetTrigger("Hand");
+                PushOwnedBall();
                 
             }
         }
@@ -120,7 +122,6 @@ public class Controller : MonoBehaviour {
         {
             return false;
         }
-        freezeBall();
 
         //ballOwned.GetComponent<Rigidbody>().AddRelativeTorque(-1 * ballOwned.GetComponent<Rigidbody>()., ForceMode.VelocityChange);
 
