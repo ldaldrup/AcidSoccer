@@ -42,3 +42,17 @@ CyberSphere.exe
 *.BASE*
 *.LOCAL*
 *.REMOTE*
+Assets/TILMAN.meta
+Assets/Texture 1.tif.meta
+Assets/Texture 2.tif.meta
+Assets/Texture 3.tif.meta
+Assets/Texture 4.tif.meta
+Assets/Texture 5.tif.meta
+Assets/UnityVS.meta
+Assets/UnityVS/Editor.meta
+Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll
+Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll.meta
+Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll
+Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll.meta
+Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
+Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll.meta
