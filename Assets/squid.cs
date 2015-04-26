@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class moustache : MonoBehaviour {
+public class squid : MonoBehaviour {
 	// Use this for initialization
 	float currentTime;
 	int nextSwing;
@@ -16,6 +16,8 @@ public class moustache : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//
+		Debug.Log (leftright);
 		if (nextSwing == 60) {
 			if(!leftright){
 				leftright = true;
@@ -31,13 +33,13 @@ public class moustache : MonoBehaviour {
 		if (!leftright) {
 			rb.AddRelativeForce (new Vector3 (0.6f, 0.0f, 0.00f));
 		}
-
-
+		
+		
 		nextSwing ++;
-
+		
 		//rotate
-
-
+		
+		
 		rb.AddTorque(transform.forward * torque);
 		
 	}
