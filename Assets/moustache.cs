@@ -6,13 +6,16 @@ public class moustache : MonoBehaviour {
 	float currentTime;
 	int nextSwing;
 	bool leftright;
+	Rigidbody rb;
 
 	void Start () {
 		nextSwing = 0;
+		rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//
 		Debug.Log (leftright);
 		if (nextSwing == 60) {
 			if(!leftright){
@@ -24,15 +27,18 @@ public class moustache : MonoBehaviour {
 			nextSwing = 0;
 		}
 		if (leftright) {
-			GetComponent<Rigidbody> ().AddRelativeForce (new Vector3 (0.6f, 0.0f, 0.00f));
+			rb.AddRelativeForce (new Vector3 (-2.6f, 0.0f, 0.00f));
 		}
 		if (!leftright) {
-			GetComponent<Rigidbody> ().AddRelativeForce (new Vector3 (-0.6f, 0.0f, 0.00f));
+			rb.AddRelativeForce (new Vector3 (0.6f, 0.0f, 0.00f));
 		}
+
 
 		nextSwing ++;
 
+		//rotate
 
+		//rb.
 	
 	}
 }
