@@ -7,7 +7,6 @@ public class Ball : MonoBehaviour {
 	// TODO: find better name
 	public Player owner;
 
-<<<<<<< HEAD
 	void OnCollisionEnter2D (Collision2D other)
 	{
 		if (other.collider.tag == "Player")
@@ -17,10 +16,8 @@ public class Ball : MonoBehaviour {
 			GetComponent<SpriteRenderer>().color = other.collider.GetComponent<SpriteRenderer>().color;
 		}
 	}
-=======
     public void Start()
     {
         GetComponent<Rigidbody>().AddExplosionForce(7.0f, new Vector3(0,0,0),88.0f);
     }
->>>>>>> 296dc21c7823cf72e439077cb423d2e3ac287621
 }

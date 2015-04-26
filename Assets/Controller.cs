@@ -36,9 +36,16 @@ public class Controller : MonoBehaviour {
 
     private void freezeBall()
     {
-        ballOwned.GetComponent<Rigidbody>().AddForce(
--1 * ballOwned.GetComponent<Rigidbody>().velocity, ForceMode.VelocityChange);
+        /*ballOwned.GetComponent<Rigidbody>().AddForce(
+-1 * ballOwned.GetComponent<Rigidbody>().velocity, ForceMode.VelocityChange);*/
+		ballOwned.GetComponent<Rigidbody>().velocity = Vector3.zero;
+		ballOwned.transform.parent = transform;
     }
+
+	private void unfreezeBall ()
+	{
+		ballOwned.transform.parent = null;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -62,33 +69,33 @@ public class Controller : MonoBehaviour {
 
         if (ballOwned != null)
         {
-            freezeBall();
+            //freezeBall();
         }
 
         currentDirection = MovementStates.Idle;
         Vector3 currentPos = gameObject.transform.position;
         Vector3 desiredPos = currentPos;
         //UP
-        if (Input.GetKeyDown(thisKeyMapping[0]))
+        if (Input.GetKey(thisKeyMapping[0]))
         {
             desiredPos.z += MovementSpeed;
             currentDirection = MovementStates.Up;
         }
 
-        if (Input.GetKeyDown(thisKeyMapping[1]))
+        if (Input.GetKey(thisKeyMapping[1]))
         {
             desiredPos.x -= MovementSpeed;
             currentAnimation = AnimationStates.MoveLeft;
             currentDirection = MovementStates.Left;
         }
 
-        if (Input.GetKeyDown(thisKeyMapping[2]))
+        if (Input.GetKey(thisKeyMapping[2]))
         {
             desiredPos.z -= MovementSpeed;
             currentDirection = MovementStates.Down;
         }
 
-        if (Input.GetKeyDown(thisKeyMapping[3]))
+        if (Input.GetKey(thisKeyMapping[3]))
         {
             desiredPos.x += MovementSpeed;
             currentAnimation = AnimationStates.MoveRight;
