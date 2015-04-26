@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 46171f8dee8a0454c8b997eb13c9d0a1
-timeCreated: 1430054404
+guid: e723fec29e7bc495aaf5a7667903ce54
+timeCreated: 1430061775
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: squid1_0
-    21300002: squid1_1
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -32,45 +30,25 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
-  nPOTScale: 0
+    wrapMode: -1
+  nPOTScale: 1
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 200
-  alphaIsTransparency: 1
-  textureType: 8
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 0
+  textureType: -1
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: squid1_0
-      rect:
-        serializedVersion: 2
-        x: 644
-        y: 852
-        width: 368
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: squid1_1
-      rect:
-        serializedVersion: 2
-        x: 592
-        y: 28
-        width: 420
-        height: 476
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
