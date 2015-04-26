@@ -69,32 +69,34 @@ public class Controller : MonoBehaviour {
         Vector3 currentPos = gameObject.transform.position;
         Vector3 desiredPos = currentPos;
         //UP
-        if (Input.GetKeyDown(thisKeyMapping[0]))
+        if (Input.GetKey(thisKeyMapping[0]))
         {
             desiredPos.z += MovementSpeed;
             currentDirection = MovementStates.Up;
+            GetComponent<Animator>().SetTrigger("WalkUp");
         }
 
-        if (Input.GetKeyDown(thisKeyMapping[1]))
+        if (Input.GetKey(thisKeyMapping[1]))
         {
             desiredPos.x -= MovementSpeed;
             currentAnimation = AnimationStates.MoveLeft;
             currentDirection = MovementStates.Left;
         }
 
-        if (Input.GetKeyDown(thisKeyMapping[2]))
+        if (Input.GetKey(thisKeyMapping[2]))
         {
             desiredPos.z -= MovementSpeed;
             currentDirection = MovementStates.Down;
+            GetComponent<Animator>().SetTrigger("WalkDown");
         }
 
-        if (Input.GetKeyDown(thisKeyMapping[3]))
+        if (Input.GetKey(thisKeyMapping[3]))
         {
             desiredPos.x += MovementSpeed;
             currentAnimation = AnimationStates.MoveRight;
             currentDirection = MovementStates.Right;
         }
-        if (Input.GetKeyDown(thisKeyMapping[4]))
+        if (Input.GetKey(thisKeyMapping[4]))
         {
             if (currentContext == Context.FootRules)
             {
@@ -127,10 +129,10 @@ public class Controller : MonoBehaviour {
 
         float force = 9;
 
-        if (currentDirection == MovementStates.Left)
-        {
-            ballOwned.GetComponent<Rigidbody>().AddForce(force, 0.0f, 0.0f);
-        }
+        //if (currentDirection == MovementStates.Left)
+        //{
+        //    ballOwned.GetComponent<Rigidbody>().AddForce(force, 0.0f, 0.0f);
+        //}
         ballOwned.GetComponent<Rigidbody>().AddForce(force, 0.0f, 0.0f);
         ballOwned = null;
         return true;
