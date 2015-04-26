@@ -2,8 +2,7 @@
 using System.Collections;
 
 // probably replace by actual player script?
-[System.Serializable]
-public class Player
+public class Player : MonoBehaviour
 {
 	public int id;
 	public int score;

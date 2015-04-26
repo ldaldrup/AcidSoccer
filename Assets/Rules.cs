@@ -16,7 +16,7 @@ public class Rules : MonoBehaviour
 
 	// all players
 	// test
-	public Player[] players;
+	Player[] players;
 
 	// the ball
 	public Ball ball;
@@ -28,6 +28,7 @@ public class Rules : MonoBehaviour
 	void Start () 
 	{
 		goals = (Goal[]) FindObjectsOfType<Goal>();
+		players = (Player[]) FindObjectsOfType<Player>();
 		initializeGoals ();
 		ball.owner = teams[0].players[0];
 	}
@@ -48,12 +49,9 @@ public class Rules : MonoBehaviour
 	void updateScoreboard ()
 	{
 		scoreboard.text = "";
-		foreach (Team team in teams)
+		foreach (Player player in players)
 		{
-			foreach (Player player in team.players)
-			{
-				scoreboard.text += " Player" + player.id + ": " + player.score + " ";
-			}
+			scoreboard.text += " Player" + player.id + ": " + player.score + " ";
 		}
 	}
 
@@ -71,6 +69,12 @@ public class Rules : MonoBehaviour
 	}
 
 	void changeRules ()
+	{
+		changeGoals ();
+		changeTeams ();
+	}
+
+	void changeGoals ()
 	{
 		// change goals of teams
 		foreach (Team team in teams)
@@ -91,6 +95,31 @@ public class Rules : MonoBehaviour
 				teams[t].goals.Add (goalsToAssign[g]);
 				goalsToAssign[g].gameObject.GetComponent<SpriteRenderer>().color = teams[t].color;
 				goalsToAssign.RemoveAt (g);
+			}
+		}
+	}
+
+	void changeTeams ()
+	{
+		// assign players to teams
+		foreach (Team team in teams)
+		{
+			team.players.Clear();
+		}
+		List<Player> playersToAssign = new List<Player>();
+		// warning: stupid code ahead
+		foreach (Player player in players)
+		{
+			playersToAssign.Add (player);
+		}
+		while (playersToAssign.Count > 0)
+		{
+			for (int t=0; t<teams.Length; t++)
+			{
+				int p = Random.Range (0, playersToAssign.Count);
+				teams[t].players.Add (playersToAssign[p]);
+				playersToAssign[p].gameObject.GetComponent<SpriteRenderer>().color = teams[t].color;
+				playersToAssign.RemoveAt (p);
 			}
 		}
 	}

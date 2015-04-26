@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Team
 {
 	public Color color;
-	public Player[] players;
+	public List<Player> players = new List<Player>();
 	// goals that belong to the team
 	// points are scored by getting the ball into opposing team's goal
 	public List<Goal> goals = new List<Goal>();
