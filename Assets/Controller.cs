@@ -19,6 +19,8 @@ public class Controller : MonoBehaviour {
 
     private GameObject ballOwned;
 
+	private Vector3 direction;
+
     private string[] keyMappingPlayerOne = { "w", "a", "s", "d", "q" };
     private string[] keyMappingPlayerTwo = { "i", "j", "k", "l", "u" };
     private string[] thisKeyMapping;
@@ -38,13 +40,19 @@ public class Controller : MonoBehaviour {
     {
         /*ballOwned.GetComponent<Rigidbody>().AddForce(
 -1 * ballOwned.GetComponent<Rigidbody>().velocity, ForceMode.VelocityChange);*/
-		ballOwned.GetComponent<Rigidbody>().velocity = Vector3.zero;
+		Rigidbody ballRigidbody = ballOwned.GetComponent<Rigidbody>();
+		ballRigidbody.velocity = Vector3.zero;
+		ballRigidbody.isKinematic = true;
+		ballOwned.GetComponent<Collider>().enabled = false;
 		ballOwned.transform.parent = transform;
     }
 
 	private void unfreezeBall ()
 	{
+		Rigidbody ballRigidbody = ballOwned.GetComponent<Rigidbody>();
+		ballOwned.GetComponent<Collider>().enabled = true;
 		ballOwned.transform.parent = null;
+		ballRigidbody.isKinematic = false;
 	}
 
 	// Use this for initialization
@@ -121,8 +129,8 @@ public class Controller : MonoBehaviour {
             }
         }
 
-        GetComponent<Rigidbody>().MovePosition(desiredPos);
-
+		GetComponent<Rigidbody>().MovePosition(desiredPos);
+		direction = (desiredPos-currentPos).normalized;
 	}
 
     private bool PushOwnedBall()
@@ -132,15 +140,15 @@ public class Controller : MonoBehaviour {
             return false;
         }
 
+		Rigidbody ballRigidbody = ballOwned.GetComponent<Rigidbody>();
+
         //ballOwned.GetComponent<Rigidbody>().AddRelativeTorque(-1 * ballOwned.GetComponent<Rigidbody>()., ForceMode.VelocityChange);
 
         float force = 9;
-
-        //if (currentDirection == MovementStates.Left)
-        //{
-        //    ballOwned.GetComponent<Rigidbody>().AddForce(force, 0.0f, 0.0f);
-        //}
-        ballOwned.GetComponent<Rigidbody>().AddForce(force, 0.0f, 0.0f);
+		
+		unfreezeBall ();
+		ballOwned.transform.position += direction;
+		ballRigidbody.AddForce(direction*10, ForceMode.Impulse);
         ballOwned = null;
         return true;
     }
